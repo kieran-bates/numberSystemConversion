@@ -187,7 +187,15 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_decToBinActionPerformed
 
     private void binToDecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binToDecActionPerformed
-        // TODO add your handling code here:
+        
+        String userInput = decimalInput.getText();
+        int inputLength = userInput.length()-1;
+        String output = "";
+        
+        for(int i = 0; i<userInput.length()-1; i++)
+        {
+            
+        }
     }//GEN-LAST:event_binToDecActionPerformed
 
     /**
