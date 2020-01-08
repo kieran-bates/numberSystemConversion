@@ -37,6 +37,14 @@ public class GUI extends javax.swing.JFrame {
         binaryInput = new javax.swing.JTextField();
         binToDec = new javax.swing.JButton();
         decimalOut = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        hexInput = new javax.swing.JTextField();
+        hexToBin = new javax.swing.JButton();
+        decimalOut1 = new javax.swing.JLabel();
+        hexOut = new javax.swing.JLabel();
+        binToHex = new javax.swing.JButton();
+        decimalInput1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +90,42 @@ public class GUI extends javax.swing.JFrame {
         decimalOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         decimalOut.setText("---");
 
+        jLabel4.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel4.setText("Enter a hex number");
+
+        hexInput.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        hexInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        hexToBin.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        hexToBin.setText("Hex. to Dec.");
+        hexToBin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexToBinActionPerformed(evt);
+            }
+        });
+
+        decimalOut1.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        decimalOut1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        decimalOut1.setText("---");
+
+        hexOut.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        hexOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hexOut.setText("---");
+
+        binToHex.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        binToHex.setText("Dec. to Hex.");
+        binToHex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                binToHexActionPerformed(evt);
+            }
+        });
+
+        decimalInput1.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        decimalInput1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel6.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel6.setText("Enter a decimal number");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,28 +137,47 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(decimalInput1)
+                            .addComponent(hexInput, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(binaryInput, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(decimalInput))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(binToDec)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(decimalOut))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(decToBin)
-                                .addGap(49, 49, 49)
-                                .addComponent(binaryOut)))
-                        .addGap(50, 50, 50))))
+                                .addComponent(jLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(binaryInput, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                                    .addComponent(decimalInput))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(hexToBin)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(decimalOut1))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(binToHex)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(hexOut))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(binToDec)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(decimalOut))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(decToBin)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(binaryOut)))
+                                .addGap(50, 50, 50))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +198,19 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(binaryInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(binToDec)
                     .addComponent(decimalOut))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(hexInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hexToBin)
+                    .addComponent(decimalOut1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(decimalInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(binToHex)
+                    .addComponent(hexOut))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -188,15 +263,123 @@ public class GUI extends javax.swing.JFrame {
 
     private void binToDecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binToDecActionPerformed
         
-        String userInput = decimalInput.getText();
+        String userInput = binaryInput.getText();
         int inputLength = userInput.length()-1;
         String output = "";
         
-        for(int i = 0; i<userInput.length()-1; i++)
+        int value1 = 1;
+        int value2 = 0;
+        for(int i = userInput.length()-1; i>=0; i--)
         {
-            
+            if(String.valueOf(userInput.charAt(i)).equals("1"))
+            {
+                value2 = value2+value1;
+                value1 = value1*2;
+            }
+            if(String.valueOf(userInput.charAt(i)).equals("0"))
+            {
+                value1 = value1*2;
+            }
         }
+        decimalOut.setText(String.valueOf(value2));
     }//GEN-LAST:event_binToDecActionPerformed
+
+    private void hexToBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexToBinActionPerformed
+        
+        String userInput = hexInput.getText();
+        
+        double pow = 0;
+        double value = 0;
+        double value2 = 0;
+        for(int i = userInput.length()-1; i>=0; i--)
+        {
+            if(userInput.charAt(i) == 'A')
+            {
+                value2 = 10;
+            }
+            else if(userInput.charAt(i) == 'B')
+            {
+                value2 = 11;
+            }
+            else if(userInput.charAt(i) == 'C')
+            {
+                value2 = 12;
+            }
+            else if(userInput.charAt(i) == 'D')
+            {
+                value2 = 13;
+            }
+            else if(userInput.charAt(i) == 'E')
+            {
+                value2 = 14;
+            }
+            else if(userInput.charAt(i) == 'F')
+            {
+                value2 = 15;
+            }
+            else
+            {
+                value2 = Double.parseDouble(String.valueOf(userInput.charAt(i)));
+            }
+            value = value+(value2*(Math.pow(16, pow)));
+            pow = pow+1;
+        }
+        decimalOut1.setText(String.valueOf(value));
+    }//GEN-LAST:event_hexToBinActionPerformed
+
+    private void binToHexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binToHexActionPerformed
+        
+        int lastNumber;
+        String hexOutput = "";
+        String hexOutputFinal = "";
+        
+        lastNumber = Integer.parseInt(decimalInput1.getText());
+        
+        while(lastNumber >= 1)
+        {
+             if(lastNumber%16 == 10)
+             {
+                 hexOutput += ("A");
+             }
+             else if(lastNumber%16 == 11)
+             {
+                 hexOutput += ("B");
+             }
+             else if(lastNumber%16 == 12)
+             {
+                 hexOutput += ("C");
+             }
+             else if(lastNumber%16 == 13)
+             {
+                 hexOutput += ("D");
+             }
+             else if(lastNumber%16 == 14)
+             {
+                 hexOutput += ("E");
+             }
+             else if(lastNumber%16 == 15)
+             {
+                 hexOutput += ("F");
+             }
+             else
+             {
+                 hexOutput += (String.valueOf(lastNumber%16));
+             }
+             
+             lastNumber = lastNumber/16;
+        }
+        //binaryOut.setText(binaryOutput);
+        
+        int charPosition = hexOutput.length()-1;
+        for(int i = 0; i<=hexOutput.length()-1; i++)
+        {
+            hexOutputFinal += hexOutput.charAt(charPosition);
+            charPosition = charPosition-1;
+        }
+        
+        hexOut.setText(hexOutputFinal);
+        
+    }//GEN-LAST:event_binToHexActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,15 +418,23 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton binToDec;
+    private javax.swing.JButton binToHex;
     private javax.swing.JTextField binaryInput;
     private javax.swing.JLabel binaryOut;
     private javax.swing.JButton decToBin;
     private javax.swing.JTextField decimalInput;
+    private javax.swing.JTextField decimalInput1;
     private javax.swing.JLabel decimalOut;
+    private javax.swing.JLabel decimalOut1;
+    private javax.swing.JTextField hexInput;
+    private javax.swing.JLabel hexOut;
+    private javax.swing.JButton hexToBin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
