@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Kieran Bates
+ * January 7, 2020
+ * This program converts decimal numbers to other number systems and back
  */
 
 /**
@@ -229,17 +229,17 @@ public class GUI extends javax.swing.JFrame {
 
     private void decToBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decToBinActionPerformed
         
-        int lastNumber;
-        String binaryOutput = "";
-        String binaryOutputFinal = "";
+        int lastNumber; //sets a variable for the last number that was divided
+        String binaryOutput = ""; //Sets a string for an individual binary digit
+        String binaryOutputFinal = ""; //Sets a string for the final binary number
         
-        lastNumber = Integer.parseInt(decimalInput.getText());
+        lastNumber = Integer.parseInt(decimalInput.getText()); //store th user input in a variable
         
-        while(lastNumber >= 1)
+        while(lastNumber >= 1) //open loop for conversion algorithm
         {
-             if(lastNumber%2 > 0)
+             if(lastNumber%2 > 0) //modulus divide by two
              {
-                 binaryOutput += ("1");
+                 binaryOutput += ("1"); //store number in temporary string
              }
              else
              {
