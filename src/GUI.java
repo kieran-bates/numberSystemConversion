@@ -233,7 +233,7 @@ public class GUI extends javax.swing.JFrame {
         String binaryOutput = ""; //Sets a string for an individual binary digit
         String binaryOutputFinal = ""; //Sets a string for the final binary number
         
-        lastNumber = Integer.parseInt(decimalInput.getText()); //store th user input in a variable
+        lastNumber = Integer.parseInt(decimalInput.getText()); //store the user input in a variable
         
         while(lastNumber >= 1) //open loop for conversion algorithm
         {
@@ -263,13 +263,13 @@ public class GUI extends javax.swing.JFrame {
 
     private void binToDecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binToDecActionPerformed
         
-        String userInput = binaryInput.getText();
-        int inputLength = userInput.length()-1;
-        String output = "";
+        String userInput = binaryInput.getText(); //Store the user input in a string
+        int inputLength = userInput.length()-1; //Store the length of the user input
+        String output = "";//Create a string for the output
         
         int value1 = 1;
         int value2 = 0;
-        for(int i = userInput.length()-1; i>=0; i--)
+        for(int i = userInput.length()-1; i>=0; i--) //Perform the conversion on every character in the input string
         {
             if(String.valueOf(userInput.charAt(i)).equals("1"))
             {
@@ -281,19 +281,19 @@ public class GUI extends javax.swing.JFrame {
                 value1 = value1*2;
             }
         }
-        decimalOut.setText(String.valueOf(value2));
+        decimalOut.setText(String.valueOf(value2)); //Output results
     }//GEN-LAST:event_binToDecActionPerformed
 
     private void hexToBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexToBinActionPerformed
         
-        String userInput = hexInput.getText();
+        String userInput = hexInput.getText(); //Store user input in a variable
         
         double pow = 0;
         double value = 0;
         double value2 = 0;
-        for(int i = userInput.length()-1; i>=0; i--)
+        for(int i = userInput.length()-1; i>=0; i--)  //Perform the conversion
         {
-            if(userInput.charAt(i) == 'A')
+            if(userInput.charAt(i) == 'A') //Convert letters to numbers
             {
                 value2 = 10;
             }
@@ -319,12 +319,12 @@ public class GUI extends javax.swing.JFrame {
             }
             else
             {
-                value2 = Double.parseDouble(String.valueOf(userInput.charAt(i)));
+                value2 = Double.parseDouble(String.valueOf(userInput.charAt(i))); //Store user input in an int for conversion equation
             }
-            value = value+(value2*(Math.pow(16, pow)));
+            value = value+(value2*(Math.pow(16, pow)));  //Equation for conversion
             pow = pow+1;
         }
-        decimalOut1.setText(String.valueOf(value));
+        decimalOut1.setText(String.valueOf(value)); //Output the converted number
     }//GEN-LAST:event_hexToBinActionPerformed
 
     private void binToHexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binToHexActionPerformed
@@ -333,7 +333,7 @@ public class GUI extends javax.swing.JFrame {
         String hexOutput = "";
         String hexOutputFinal = "";
         
-        lastNumber = Integer.parseInt(decimalInput1.getText());
+        lastNumber = Integer.parseInt(decimalInput1.getText()); //Store user input in a variable
         
         while(lastNumber >= 1)
         {
@@ -363,7 +363,7 @@ public class GUI extends javax.swing.JFrame {
              }
              else
              {
-                 hexOutput += (String.valueOf(lastNumber%16));
+                 hexOutput += (String.valueOf(lastNumber%16)); //Store the hex number backwards in a string
              }
              
              lastNumber = lastNumber/16;
@@ -371,13 +371,13 @@ public class GUI extends javax.swing.JFrame {
         //binaryOut.setText(binaryOutput);
         
         int charPosition = hexOutput.length()-1;
-        for(int i = 0; i<=hexOutput.length()-1; i++)
+        for(int i = 0; i<=hexOutput.length()-1; i++) //Store the hex number in the right order
         {
             hexOutputFinal += hexOutput.charAt(charPosition);
             charPosition = charPosition-1;
         }
         
-        hexOut.setText(hexOutputFinal);
+        hexOut.setText(hexOutputFinal); //Output the final number
         
     }//GEN-LAST:event_binToHexActionPerformed
 
